@@ -67,6 +67,7 @@
         </style>
     </head>
     <body>
+       @include('navigate.nav')
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
@@ -78,19 +79,6 @@
                     @endauth
                 </div>
             @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-<!--                    Laravel-->
-                </div>
-
-                <div class="links">
-                    <a href="/">Home</a>
-                    <a href="certificatons">Certifications</a>
-                    <a href="games">Games</a>
-                    <a href="shows">Favorite Shows</a>
-                </div>
-            </div>
             <p>This is my home page.</p>
         </div>
     </body>

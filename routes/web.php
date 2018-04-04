@@ -26,3 +26,21 @@ Route::get('games', function(){
 Route::get('shows', function(){
     return view('shows');
 });
+
+
+/* IC Notes
+    
+    <li class="nav-item" @if(Route::is('/tabletops.*')) active(this is bootstrap's css) @endif>
+        <a href="{{ route()}}
+    </li>
+    
+    url()
+    
+    Route::resource()
+    
+    @extends
+    @yield
+    @section
+    
+    @endsection @stop
+*/

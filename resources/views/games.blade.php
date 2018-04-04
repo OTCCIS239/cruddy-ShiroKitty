@@ -11,6 +11,7 @@
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
     </head>
     <body>
+       @include('navigate.nav')
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
@@ -22,15 +23,6 @@
                     @endauth
                 </div>
             @endif
-
-            <div class="content">
-                <div class="links">
-                    <a href="/">Home</a>
-                    <a href="certificatons">Certifications</a>
-                    <a href="games">Games</a>
-                    <a href="shows">Favorite Shows</a>
-                </div>
-            </div>
             <p>This is where I'll post any games I've made.</p>
         </div>
     </body>
