@@ -12,5 +12,17 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
+});
+
+Route::get('certificatons', function(){
+    return view('certifications');
+});
+
+Route::get('games', function(){
+    return view('games');
+});
+
+Route::get('shows', function(){
+    return view('shows');
 });
