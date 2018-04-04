@@ -28,7 +28,12 @@ Route::get('shows', function(){
 });
 
 
+
+
 /* IC Notes
+
+    
+
     
     <li class="nav-item" @if(Route::is('/tabletops.*')) active(this is bootstrap's css) @endif>
         <a href="{{ route()}}
