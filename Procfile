@@ -1,1 +1,1 @@
-web: public/index.php
+web: resources/views/home.blade.php
