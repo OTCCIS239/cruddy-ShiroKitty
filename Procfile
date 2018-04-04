@@ -1,1 +1,1 @@
-web: public/index.php public/
+web: public/index.php
