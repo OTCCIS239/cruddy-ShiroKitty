@@ -1,1 +1,1 @@
-web: resources/views/home.blade.php
+web: vendor/bin/heroku-php-apache2 public/
