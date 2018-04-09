@@ -1,3 +1,8 @@
+.links a{
+    text-decoration: none;
+    font-size: 20px;
+}
+
 td{
     text-align: center;
 }
@@ -9,9 +14,6 @@ td{
     margin: 20px;
 }
 
-.certImg:hover{
-    
-}
 
 /*    Games Page   */
 .gameBox{

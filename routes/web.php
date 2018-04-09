@@ -15,20 +15,13 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('certificatons', function(){
-    return view('certifications');
-});
-
-Route::get('games', function(){
-    return view('games');
-});
-
-Route::get('shows', function(){
-    return view('shows');
-});
-
-
-
+Route::resources([
+    'anime' => 'AnimeController',
+    'movies' => 'MovieController',
+    'books' => 'BookController',
+    'games' => 'GameController',
+    'shows' => 'ShowController'
+]);
 
 /* IC Notes
 
