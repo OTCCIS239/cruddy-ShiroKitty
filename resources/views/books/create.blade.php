@@ -1,7 +1,7 @@
 @extends('layout.master')
 
 @section('content')
-    <h2>Add a New Anime</h2>
+    <h2>Add a New Book</h2>
     <form>
         Title: <br>
         <input type="text">
@@ -12,7 +12,6 @@
         Number of Episodes: <br>
         <input type="text">
         <br>
-        <button class="button" type="button">Add Series</button>
-        
+        <button class="button" type="button">Add Book</button>
     </form>
 @endsection

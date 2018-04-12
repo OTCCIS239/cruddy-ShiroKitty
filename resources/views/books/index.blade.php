@@ -1,5 +1,7 @@
 @extends('layout.master')
 
 @section('content')
-    <p>This is my books page.</p>
+    <h2>Books</h2>
+
+    <p><a class="button" href="/books/create">Add A Book</a></p>
 @endsection
