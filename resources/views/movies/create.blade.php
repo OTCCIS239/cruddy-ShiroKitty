@@ -9,7 +9,7 @@
         Genre: <br>
         <input type="text">
         <br>
-        Number of Episodes: <br>
+        Runtime: <br>
         <input type="text">
         <br>
         <button class="button" type="button">Add Movie</button>

@@ -9,7 +9,7 @@
         Genre: <br>
         <input type="text">
         <br>
-        Number of Episodes: <br>
+        Release Date: <br>
         <input type="text">
         <br>
         <button class="button" type="button">Add Game</button>

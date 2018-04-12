@@ -9,7 +9,7 @@
         Genre: <br>
         <input type="text">
         <br>
-        Number of Episodes: <br>
+        Publication Date: <br>
         <input type="text">
         <br>
         <button class="button" type="button">Add Book</button>
