@@ -8,8 +8,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>@yield('title')</title>
-        <link rel="stylesheet" href="http://tjliggett.com/CSS/foundation.css">
-        <link rel="stylesheet" href="http://tjliggett.com/CSS/override.css">
+        <link rel="stylesheet" href="{{ URL::asset('css/foundation.css') }}">
+        <link rel="stylesheet" href="{{ URL::asset('css/override.css') }}">
     </head>
     <body>
         <div class="top-bar">
