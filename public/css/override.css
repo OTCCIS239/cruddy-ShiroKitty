@@ -2,16 +2,21 @@
 
 body{
     background: repeating-linear-gradient(
-       to right,    
-        #AACC00,
+       to right,       
+        #AACC00,     
         #AACC00 20px,
         #BBD633 20px,
-        #BBD633 40px
+        #BBD633 40px 
     );
 }
 
-.grid-containeri{
-    width: 100% !important;
+.surroundDiv{
+    margin-top: 20px;
+    background: #F6F4E5;
+    padding: 20px;
+    min-height: 300px;
+    border: solid #1779BA;
+    border-width: 6px 6px 6px 6px;
 }
 
 /*  Navbar  */
