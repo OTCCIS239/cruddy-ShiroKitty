@@ -12,20 +12,22 @@
         <link rel="stylesheet" href="{{ asset('css/override.css') }}">
     </head>
     <body>
-        <div class="top-bar">
-                <ul class="menu">
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/anime">Anime</a></li>
-                    <li><a href="/movies">Movies</a></li>
-                    <li><a href="/books">Books</a></li>
-                    <li><a href="/games">Games</a></li>
-                    <li><a href="/shows">Tv Shows</a></li>
-                </ul>
-            </div>
         <div class="grid-container">
-            
-            <div class="container">
-                @yield('content')
+            <div class="top-bar">
+                    <ul class="menu">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/anime">Anime</a></li>
+                        <li><a href="/movies">Movies</a></li>
+                        <li><a href="/books">Books</a></li>
+                        <li><a href="/games">Games</a></li>
+                        <li><a href="/shows">Tv Shows</a></li>
+                    </ul>
+                </div>
+            <div class="grid-container">
+                
+                <div class="container">
+                    @yield('content')
+                </div>
             </div>
         </div>
     </body>
