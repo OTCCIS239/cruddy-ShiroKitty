@@ -45,7 +45,7 @@ class ShowController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('shows.show');
     }
 
     /**

@@ -34,7 +34,7 @@ class BookController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
     }
 
     /**
@@ -45,7 +45,7 @@ class BookController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('books.show');
     }
 
     /**

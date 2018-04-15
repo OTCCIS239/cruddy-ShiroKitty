@@ -1,39 +1,60 @@
 
+/*  Variables  */
+:root {
+    --color-one: #AACC00;
+    --color-two: #BBD633;
+    --color-trim: #1779BA;
+    --color-nav: #272822;
+    --background: #F6F4E5;
+}
 
+/*  Main Layout  */
 body{
     background: repeating-linear-gradient(
        to right,       
-        #AACC00,     
-        #AACC00 20px,
-        #BBD633 20px,
-        #BBD633 40px 
+        var(--color-one),     
+        var(--color-one) 20px,
+        var(--color-two) 20px,
+        var(--color-two) 40px 
     );
 }
 
 .surroundDiv{
     margin-top: 20px;
-    background: #F6F4E5;
+    background: var(--background);
     padding: 20px;
     min-height: 300px;
-    border: solid #1779BA;
+    border: solid var(--color-trim);
     border-width: 6px 6px 6px 6px;
 }
 
 /*  Navbar  */
 .top-bar{
-    background: #272822;
+    background: var(--color-nav);
     padding: 0px;
-    border-bottom: 6px solid #1779BA;
+    border-bottom: 6px solid var(--color-trim);
 }
 div .menu{
-    background: #272822;
+    background: var(--color-nav);
 }
 .menu li a {
-    color: white;
+    color: var(--background);
 }
 .menu li{
     padding: 8px;
 }
 .menu li:hover{
     background: #14679f;
+}
+
+/*  Tables  */
+th{
+    background: var(--color-one);
+}
+table, td, th{
+    border: 3px solid var(--color-trim);
+    
+}
+th{
+    text-align: left;
 }
