@@ -4,7 +4,6 @@
     <h2>Movies</h2>
     <table>
         <tr>
-            <th>ID</th>
             <th>Title</th>
             <th>Genre</th>
             <th>Runtime</th>
@@ -13,7 +12,6 @@
         </tr>
         @foreach($movie as $movies)
         <tr>
-            <td>{{ $movies->id }}</td>
             <td>{{ $movies->title }}</td>
             <td>{{ $movies->genre }}</td>
             <td>{{ $movies->runtime }}</td>

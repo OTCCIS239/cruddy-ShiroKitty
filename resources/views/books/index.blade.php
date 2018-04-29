@@ -4,7 +4,6 @@
     <h2>Books</h2>
     <table>
         <tr>
-            <th>ID</th>
             <th>Title</th>
             <th>Genre</th>
             <th>Publication Date</th>
@@ -13,7 +12,6 @@
         </tr>
         @foreach($book as $books)
         <tr>
-            <td>{{ $books->id }}</td>
             <td>{{ $books->title }}</td>
             <td>{{ $books->genre }}</td>
             <td>{{ $books->publication_date }}</td>

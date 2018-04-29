@@ -4,7 +4,6 @@
     <h2>Tv Shows</h2>
     <table>
         <tr>
-            <th>ID</th>
             <th>Title</th>
             <th>Genre</th>
             <th># Of Episodes</th>
@@ -13,7 +12,6 @@
         </tr>
         @foreach($show as $shows)
         <tr>
-            <td>{{ $shows->id }}</td>
             <td>{{ $shows->title }}</td>
             <td>{{ $shows->genre }}</td>
             <td>{{ $shows->episodes }}</td>

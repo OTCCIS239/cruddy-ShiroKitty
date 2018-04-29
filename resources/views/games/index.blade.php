@@ -6,7 +6,6 @@
     <h2>Games</h2>
     <table>
         <tr>
-            <th>ID</th>
             <th>Title</th>
             <th>Genre</th>
             <th>Release Date</th>
@@ -15,7 +14,6 @@
         </tr>
         @foreach($game as $games)
         <tr>
-            <td>{{ $games->id }}</td>
             <td>{{ $games->title }}</td>
             <td>{{ $games->genre }}</td>
             <td>{{ $games->release_date }}</td>
