@@ -13,14 +13,14 @@
             <th></th>
             <th></th>
         </tr>
-        @foreach($games as $game)
+        @foreach($game as $games)
         <tr>
-            <td>{{ $game->id }}</td>
-            <td>{{ $game->title }}</td>
-            <td>{{ $game->genre }}</td>
-            <td>{{ $game->release_date }}</td>
-            <td><a href="/games/{{ $game->id }}/edit" type="button" class="button">Edit</a></td>
-            <td><a href="/games/{{ $game->id }}" type="button" class="button">Show</a></td>
+            <td>{{ $games->id }}</td>
+            <td>{{ $games->title }}</td>
+            <td>{{ $games->genre }}</td>
+            <td>{{ $games->release_date }}</td>
+            <td><a href="/games/{{ $games->id }}/edit" type="button" class="button">Edit</a></td>
+            <td><a href="/games/{{ $games->id }}" type="button" class="button">Show</a></td>
         </tr>
         @endforeach
     </table>

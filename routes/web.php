@@ -15,30 +15,12 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::resources([
-    'anime' => 'AnimeController',
-    'movies' => 'MovieController',
-    'books' => 'BookController',
-    'games' => 'GameController',
-    'shows' => 'ShowController'
-]);
+Route::resource('games', 'GameController');
 
-/* IC Notes
-
-    
-
-    
-    <li class="nav-item" @if(Route::is('/tabletops.*')) active(this is bootstrap's css) @endif>
-        <a href="{{ route()}}
-    </li>
-    
-    url()
-    
-    Route::resource()
-    
-    @extends
-    @yield
-    @section
-    
-    @endsection @stop
-*/
+// Route::resources([
+//     'anime' => 'AnimeController',
+//     'movies' => 'MovieController',
+//     'books' => 'BookController',
+//     'games' => 'GameController',
+//     'shows' => 'ShowController'
+// ]);

@@ -14,8 +14,8 @@ class GameController extends Controller
      */
     public function index()
     {
-        $games = Game::all();
-        return view('games.index', compact('games'));
+        $game = Game::all();
+        return view('games.index', compact('game'));
     }
 
     /**
@@ -39,8 +39,8 @@ class GameController extends Controller
         $this->validate($request, [
             'title'=>'required',
         ]);
-        $games = Game::create($request->all());
-        return redirect('/games/' . $games->id);
+        $game = Game::create($request->all());
+        return redirect('/games/' . $game->id);
     }
 
     /**
@@ -49,9 +49,10 @@ class GameController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Game $games)
+    public function show(Game $game)
     {
-        return view('games.show', compact('games'));
+        
+        return view('games.show', compact('game'));
     }
 
     /**
@@ -60,9 +61,9 @@ class GameController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Game $games)
+    public function edit(Game $game)
     {
-        return view('games.edit', compact('games'));
+        return view('games.edit', compact('game'));
     }
 
     /**
@@ -72,10 +73,10 @@ class GameController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Game $games)
+    public function update(Request $request, Game $game)
     {
-        $games->update($request->all());
-        return redirect('/anime/' . $games->id);
+        $game->update($request->all());
+        return redirect('/anime/' . $game->id);
     }
 
     /**
@@ -84,9 +85,9 @@ class GameController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Game $games)
+    public function destroy(Game $game)
     {
-        $games->delete();
+        $game->delete();
 
         return redirect('/games'); 
     }

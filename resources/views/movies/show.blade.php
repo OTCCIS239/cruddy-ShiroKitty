@@ -9,7 +9,7 @@
     <form action="/movies/{{ $movies->id }}" method="post">
         <input type="hidden" name="_method" value="delete">
         {{ csrf_field() }}
-        <button type="button" class="alert button">Delete</button>
+        <button type="submit button" class="alert button">Delete</button>
     </form>
 
 @endsection
