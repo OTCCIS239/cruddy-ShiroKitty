@@ -14,8 +14,8 @@ class MovieController extends Controller
      */
     public function index()
     {
-        $movies = Movie::all();
-        return view('movies.index', compact('movies'));
+        $movie = Movie::all();
+        return view('movies.index', compact('movie'));
     }
 
     /**
@@ -40,8 +40,8 @@ class MovieController extends Controller
             'title'=>'required',
             'genre'=>'required',
         ]);
-        $movies = Movie::create($request->all());
-        return redirect('/movies/' . $movies->id);
+        $movie = Movie::create($request->all());
+        return redirect('/movies/' . $movie->id);
     }
 
     /**
@@ -50,9 +50,9 @@ class MovieController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Movie $movies)
+    public function show(Movie $movie)
     {
-        return view('movies.show', compact('movies'));
+        return view('movies.show', compact('movie'));
     }
 
     /**
@@ -61,9 +61,9 @@ class MovieController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Movie $movies)
+    public function edit(Movie $movie)
     {
-        return view('movies.edit', compact('movies'));
+        return view('movies.edit', compact('movie'));
     }
 
     /**
@@ -73,10 +73,10 @@ class MovieController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Movie $movies)
+    public function update(Request $request, Movie $movie)
     {
-        $movies->update($request->all());
-        return redirect('/movies/' . $movies->id);
+        $movie->update($request->all());
+        return redirect('/movies/' . $movie->id);
     }
 
     /**
@@ -85,9 +85,9 @@ class MovieController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Movie $movies)
+    public function destroy(Movie $movie)
     {
-        $movies->delete();
+        $movie->delete();
 
         return redirect('/movies'); 
     }

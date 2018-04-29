@@ -11,14 +11,14 @@
             <th></th>
             <th></th>
         </tr>
-        @foreach($movies as $movie)
+        @foreach($movie as $movies)
         <tr>
-            <td>{{ $movie->id }}</td>
-            <td>{{ $movie->title }}</td>
-            <td>{{ $movie->genre }}</td>
-            <td>{{ $movie->episodes }}</td>
-            <td><a href="/movies/{{ $movie->id }}/edit" type="button" class="button">Edit</a></td>
-            <td><a href="/movies/{{ $movie->id }}" type="button" class="button">Show</a></td>
+            <td>{{ $movies->id }}</td>
+            <td>{{ $movies->title }}</td>
+            <td>{{ $movies->genre }}</td>
+            <td>{{ $movies->runtime }}</td>
+            <td><a href="/movies/{{ $movies->id }}/edit" type="button" class="button">Edit</a></td>
+            <td><a href="/movies/{{ $movies->id }}" type="button" class="button">Show</a></td>
         </tr>
         @endforeach
     </table>

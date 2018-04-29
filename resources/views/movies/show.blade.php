@@ -4,11 +4,12 @@
 
 @section('content')
 
-    {{ $movies->toJson() }}
+    <pre><?php echo $movie->toJson(JSON_PRETTY_PRINT) ?></pre>
 
-    <form action="/movies/{{ $movies->id }}" method="post">
+    <form action="/movies/{{ $movie->id }}" method="post">
         <input type="hidden" name="_method" value="delete">
         {{ csrf_field() }}
+        <br>
         <button type="submit button" class="alert button">Delete</button>
     </form>
 

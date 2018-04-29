@@ -14,14 +14,14 @@
             <th></th>
             <th></th>
         </tr>
-        @foreach($animeTable as $anime)
+        @foreach($anime as $animes)
         <tr>
-            <td>{{ $anime->id }}</td>
-            <td>{{ $anime->title }}</td>
-            <td>{{ $anime->genre }}</td>
-            <td>{{ $anime->episodes }}</td>
-            <td><a href="/anime/{{ $anime->id }}/edit" type="button" class="button">Edit</a></td>
-            <td><a href="/anime/{{ $anime->id }}" type="button" class="button">Show</a></td>
+            <td>{{ $animes->id }}</td>
+            <td>{{ $animes->title }}</td>
+            <td>{{ $animes->genre }}</td>
+            <td>{{ $animes->episodes }}</td>
+            <td><a href="/anime/{{ $animes->id }}/edit" type="button" class="button">Edit</a></td>
+            <td><a href="/anime/{{ $animes->id }}" type="button" class="button">Show</a></td>
         </tr>
         @endforeach
     </table>

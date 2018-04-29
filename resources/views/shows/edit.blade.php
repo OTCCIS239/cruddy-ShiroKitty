@@ -2,8 +2,8 @@
 
 @section('content')
     <h2>Edit Series</h2>
-    <form action="/anime/{{ $anime->id }}" method="post">
+    <form action="/shows/{{ $show->id }}" method="post">
         <input type="hidden" name="_method" value="PATCH">
-        @include('anime.form')
+        @include('movies.form')
     </form>
 @endsection

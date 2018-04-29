@@ -1,15 +1,14 @@
 @extends('layout.master')
 
-@section('title', 'Anime List')
-
 @section('content')
 
-    {{ $shows->toJson() }}
+    <pre><?php echo $show->toJson(JSON_PRETTY_PRINT) ?></pre>
 
-    <form action="/shows/{{ $shows->id }}" method="post">
+    <form action="/shows/{{ $show->id }}" method="post">
         <input type="hidden" name="_method" value="delete">
         {{ csrf_field() }}
-        <button type="button" class="alert button">Delete</button>
+        <br>
+        <button type="submit button" class="alert button">Delete</button>
     </form>
 
 @endsection

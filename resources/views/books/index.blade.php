@@ -11,17 +11,16 @@
             <th></th>
             <th></th>
         </tr>
-        @foreach($books as $book)
+        @foreach($book as $books)
         <tr>
-            <td>{{ $book->id }}</td>
-            <td>{{ $book->title }}</td>
-            <td>{{ $book->genre }}</td>
-            <td>{{ $book->publication_date }}</td>
-            <td><a href="/books/{{ $book->id }}/edit" type="button" class="button">Edit</a></td>
-            <td><a href="/books/{{ $book->id }}" type="button" class="button">Show</a></td>
+            <td>{{ $books->id }}</td>
+            <td>{{ $books->title }}</td>
+            <td>{{ $books->genre }}</td>
+            <td>{{ $books->publication_date }}</td>
+            <td><a href="/books/{{ $books->id }}/edit" type="button" class="button">Edit</a></td>
+            <td><a href="/books/{{ $books->id }}" type="button" class="button">Show</a></td>
         </tr>
         @endforeach
     </table>
     <a class="button" href="/books/create">Add A Book</a>
-    <a class="button" href="/books/show">View Books</a>
 @endsection

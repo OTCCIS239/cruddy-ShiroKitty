@@ -14,8 +14,8 @@ class ShowController extends Controller
      */
     public function index()
     {
-        $shows = Show::all();
-        return view('shows.index', compact('shows'));
+        $show = Show::all();
+        return view('shows.index', compact('show'));
     }
 
     /**
@@ -40,8 +40,8 @@ class ShowController extends Controller
             'title'=>'required',
             'episodes'=>'required',
         ]);
-        $shows = Show::create($request->all());
-        return redirect('/shows/' . $shows->id);
+        $show = Show::create($request->all());
+        return redirect('/shows/' . $show->id);
     }
 
     /**
@@ -50,9 +50,9 @@ class ShowController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Show $shows)
+    public function show(Show $show)
     {
-        return view('shows.show', compact('shows'));
+        return view('shows.show', compact('show'));
     }
 
     /**
@@ -61,9 +61,9 @@ class ShowController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Show $shows)
+    public function edit(Show $show)
     {
-        return view('shows.edit', compact('shows'));
+        return view('shows.edit', compact('show'));
     }
 
     /**
@@ -73,10 +73,10 @@ class ShowController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Show $shows)
+    public function update(Request $request, Show $show)
     {
-        $shows->update($request->all());
-        return redirect('/shows/' . $shows->id);
+        $show->update($request->all());
+        return redirect('/shows/' . $show->id);
     }
 
     /**
@@ -85,9 +85,9 @@ class ShowController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Show $shows)
+    public function destroy(Show $show)
     {
-        $shows->delete();
+        $show->delete();
 
         return redirect('/shows');
     }

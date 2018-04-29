@@ -15,12 +15,10 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::resource('games', 'GameController');
-
-// Route::resources([
-//     'anime' => 'AnimeController',
-//     'movies' => 'MovieController',
-//     'books' => 'BookController',
-//     'games' => 'GameController',
-//     'shows' => 'ShowController'
-// ]);
+Route::resources([
+    'anime' => 'AnimeController',
+    'movies' => 'MovieController',
+    'books' => 'BookController',
+    'games' => 'GameController',
+    'shows' => 'ShowController'
+]);
