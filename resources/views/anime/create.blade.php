@@ -1,18 +1,8 @@
 @extends('layout.master')
 
 @section('content')
-    <h2>Add a New Anime</h2>
-    <form>
-        Title: <br>
-        <input type="text">
-        <br>
-        Genre: <br>
-        <input type="text">
-        <br>
-        Number of Episodes: <br>
-        <input type="text">
-        <br>
-        <button class="button" type="button">Add Series</button>
-        
+    <h2>Add New Anime</h2>
+    <form action="/anime" method="post">
+        @include('anime.form') 
     </form>
 @endsection

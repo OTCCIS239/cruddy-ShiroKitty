@@ -4,12 +4,11 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Anime extends Model
+class Game extends Model
 {
-    //
     protected $fillable = [
         'title',
         'genre',
-        'episodes',
+        'release_date',
     ];
 }

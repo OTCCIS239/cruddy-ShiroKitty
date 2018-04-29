@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Show;
 use Illuminate\Http\Request;
 
 class ShowController extends Controller
@@ -13,7 +14,8 @@ class ShowController extends Controller
      */
     public function index()
     {
-        return view('shows.index');
+        $shows = Show::all();
+        return view('shows.index', compact('shows'));
     }
 
     /**
@@ -34,7 +36,12 @@ class ShowController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'title'=>'required',
+            'episodes'=>'required',
+        ]);
+        $shows = Show::create($request->all());
+        return redirect('/shows/' . $shows->id);
     }
 
     /**
@@ -43,9 +50,9 @@ class ShowController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Show $shows)
     {
-        return view('shows.show');
+        return view('shows.show', compact('shows'));
     }
 
     /**
@@ -54,9 +61,9 @@ class ShowController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Show $shows)
     {
-        //
+        return view('shows.edit', compact('shows'));
     }
 
     /**
@@ -66,9 +73,10 @@ class ShowController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Show $shows)
     {
-        //
+        $shows->update($request->all());
+        return redirect('/shows/' . $shows->id);
     }
 
     /**
@@ -77,8 +85,10 @@ class ShowController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Show $shows)
     {
-        //
+        $shows->delete();
+
+        return redirect('/shows');
     }
 }

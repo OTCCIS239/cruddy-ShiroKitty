@@ -4,29 +4,13 @@
 
 @section('content')
 
-    <p>Show page</p>
+    {{ $animeTable->toJson() }}
 
-    <table>
-        <tr>
-            <th>Title</th>
-            <th>Genre</th>
-            <th># Of Episodes</th>
-        </tr>
-        <tr>
-            <td>Fullmetal Alchemist: Brotherhood</td>
-            <td>Fantasy</td>
-            <td>64</td>
-        </tr>
-        <tr>
-            <td>Made in Abyss</td>
-            <td>Fantasy</td>
-            <td>13</td>
-        </tr>
-        <tr>
-            <td>Outlaw Star</td>
-            <td>Sci-Fi</td>
-            <td>24</td>
-        </tr>
-    </table>
+    <form action="/anime/{{ $animeTable->id }}" method="post">
+        <input type="hidden" name="_method" value="delete">
+        {{ csrf_field() }}
+        <button type="button" class="alert button">Delete</button>
+    </form>
 
 @endsection
+

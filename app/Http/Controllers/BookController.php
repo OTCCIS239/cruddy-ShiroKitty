@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Book;
 use Illuminate\Http\Request;
 
 class BookController extends Controller
@@ -13,7 +14,8 @@ class BookController extends Controller
      */
     public function index()
     {
-        return view('books.index');
+        $books = Book::all();
+        return view('books.index', compact('books'));
     }
 
     /**
@@ -34,7 +36,11 @@ class BookController extends Controller
      */
     public function store(Request $request)
     {
-        
+        $this->validate($request, [
+            'title'=>'required',
+        ]);
+        $books = Book::create($request->all());
+        return redirect('/books/' . $books->id);
     }
 
     /**
@@ -43,9 +49,9 @@ class BookController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Book $books)
     {
-        return view('books.show');
+        return view('books.show', compact('books'));
     }
 
     /**
@@ -54,9 +60,9 @@ class BookController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Book $books)
     {
-        //
+        return view('books.edit', compact('books'));
     }
 
     /**
@@ -66,9 +72,10 @@ class BookController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Book $books)
     {
-        //
+        $books->update($request->all());
+        return redirect('/books/' . $books->id);
     }
 
     /**
@@ -77,8 +84,9 @@ class BookController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Book $books)
     {
-        //
+        $books->delete();
+        return redirect('/books');
     }
 }

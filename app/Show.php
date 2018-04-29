@@ -4,9 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Anime extends Model
+class Show extends Model
 {
-    //
     protected $fillable = [
         'title',
         'genre',

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Game;
 use Illuminate\Http\Request;
 
 class GameController extends Controller
@@ -13,7 +14,8 @@ class GameController extends Controller
      */
     public function index()
     {
-        return view('games.index');
+        $games = Game::all();
+        return view('games.index', compact('games'));
     }
 
     /**
@@ -34,7 +36,11 @@ class GameController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'title'=>'required',
+        ]);
+        $games = Game::create($request->all());
+        return redirect('/games/' . $games->id);
     }
 
     /**
@@ -43,9 +49,9 @@ class GameController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Game $games)
     {
-        return view('games.show');
+        return view('games.show', compact('games'));
     }
 
     /**
@@ -54,9 +60,9 @@ class GameController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Game $games)
     {
-        //
+        return view('games.edit', compact('games'));
     }
 
     /**
@@ -66,9 +72,10 @@ class GameController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Game $games)
     {
-        //
+        $games->update($request->all());
+        return redirect('/anime/' . $games->id);
     }
 
     /**
@@ -77,8 +84,10 @@ class GameController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Game $games)
     {
-        //
+        $games->delete();
+
+        return redirect('/games'); 
     }
 }

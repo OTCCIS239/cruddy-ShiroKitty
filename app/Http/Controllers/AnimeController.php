@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use app\Anime;
+use App\Anime;
 use Illuminate\Http\Request;
 
 class AnimeController extends Controller
@@ -14,7 +14,8 @@ class AnimeController extends Controller
      */
     public function index()
     {
-       return view('anime.index');
+        $animeTable = Anime::all();
+        return view('anime.index', compact('animeTable'));
     }
 
     /**
@@ -35,7 +36,12 @@ class AnimeController extends Controller
      */
     public function store(Request $request)
     {
-        
+        $this->validate($request, [
+            'title'=>'required',
+            'episodes'=>'required',
+        ]);
+        $animeTable = Anime::create($request->all());
+        return redirect('/anime/' . $animeTable->id);
     }
 
     /**
@@ -44,10 +50,10 @@ class AnimeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Anime $animeTable)
     {
-        return view('anime.show');
-    }
+        return view('anime.show', compact('animeTable'));
+    } 
 
     /**
      * Show the form for editing the specified resource.
@@ -55,9 +61,9 @@ class AnimeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Anime $animeTable)
     {
-        //
+        return view('anime.edit', compact('animeTable'));
     }
 
     /**
@@ -67,9 +73,10 @@ class AnimeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Anime $animeTable)
     {
-        //
+        $animeTable->update($request->all());
+        return redirect('/anime/' . $animeTable->id);
     }
 
     /**
@@ -78,8 +85,10 @@ class AnimeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Anime $animeTable)
     {
-        //
+        $animeTable->delete();
+
+        return redirect('/anime'); 
     }
 }

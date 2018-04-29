@@ -4,19 +4,12 @@
 
 @section('content')
 
-    <p>Show page</p>
+    {{ $shows->toJson() }}
 
-    <table>
-        <tr>
-            <th>Title</th>
-            <th>Fantasy</th>
-            <th>Number of Episodes</th>
-        </tr>
-        <tr>
-            <td>Avatar: The Last Airbender</td>
-            <td>Fantasy</td>
-            <td>61</td>
-        </tr>
-    </table>
+    <form action="/shows/{{ $shows->id }}" method="post">
+        <input type="hidden" name="_method" value="delete">
+        {{ csrf_field() }}
+        <button type="button" class="alert button">Delete</button>
+    </form>
 
 @endsection

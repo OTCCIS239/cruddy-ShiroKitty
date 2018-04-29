@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Movie;
 use Illuminate\Http\Request;
 
 class MovieController extends Controller
@@ -13,7 +14,8 @@ class MovieController extends Controller
      */
     public function index()
     {
-        return view('movies.index');
+        $movies = Movie::all();
+        return view('movies.index', compact('movies'));
     }
 
     /**
@@ -34,7 +36,12 @@ class MovieController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'title'=>'required',
+            'genre'=>'required',
+        ]);
+        $movies = Movie::create($request->all());
+        return redirect('/movies/' . $movies->id);
     }
 
     /**
@@ -43,9 +50,9 @@ class MovieController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Movie $movies)
     {
-        return view('movies.show');
+        return view('movies.show', compact('movies'));
     }
 
     /**
@@ -54,9 +61,9 @@ class MovieController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Movie $movies)
     {
-        //
+        return view('movies.edit', compact('movies'));
     }
 
     /**
@@ -66,9 +73,10 @@ class MovieController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Movie $movies)
     {
-        //
+        $movies->update($request->all());
+        return redirect('/movies/' . $movies->id);
     }
 
     /**
@@ -77,8 +85,10 @@ class MovieController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Movie $movies)
     {
-        //
+        $movies->delete();
+
+        return redirect('/movies'); 
     }
 }
